@@ -8,7 +8,7 @@ The habit that connects it all: when an AI product gives a wrong answer, check t
 
 ## Start in ten minutes, with nothing to install
 
-1. Open the [ai-builder-sandbox](https://github.com/deepak-mukunthu/ai-builder-sandbox) project. Click **Code**, then **Download ZIP**, unzip it, and double-click `index.html`.
+1. Open the [AI-Builder-Sandbox](https://github.com/deepak-mukunthu/AI-Builder-Sandbox) project. Click **Code**, then **Download ZIP**, unzip it, and double-click `index.html`.
 2. Choose **ShopBot mini**, click **Load broken version**, open the **5 Test** tab, and click **Run all tests**. The score is 30%.
 3. Open a failing test's trace, find the part that's missing something, fix it, and run the tests again. Five fixes take the score to 100%.
 
@@ -47,7 +47,7 @@ You need Python 3 and nothing else. You should see traces for each question and 
 
 The book uses a path of small open-source projects. The full list, with setup steps, is in [`docs/projects.md`](docs/projects.md). The main ones:
 
-- [ai-builder-sandbox](https://github.com/deepak-mukunthu/ai-builder-sandbox): configure a small assistant with forms, no install
+- [AI-Builder-Sandbox](https://github.com/deepak-mukunthu/AI-Builder-Sandbox): configure a small assistant with forms, no install
 - [data-flywheel-agent-lab](https://github.com/deepak-mukunthu/data-flywheel-agent-lab): ShopBot, with planted problems to find and fix
 - [RAG-Explorer](https://github.com/deepak-mukunthu/RAG-Explorer): chunking and search
 - [AI-RedTeaming-Framework](https://github.com/deepak-mukunthu/AI-RedTeaming-Framework): test an agent's guardrails

@@ -1,6 +1,6 @@
 # Chapter guide
 
-What you do in each chapter, where to do it, and what you should see. "Sandbox" means [ai-builder-sandbox](https://github.com/deepak-mukunthu/ai-builder-sandbox), which needs no install. "Lab" means [data-flywheel-agent-lab](https://github.com/deepak-mukunthu/data-flywheel-agent-lab), run with `python3 serve.py` at http://localhost:8777.
+What you do in each chapter, where to do it, and what you should see. "Sandbox" means [AI-Builder-Sandbox](https://github.com/deepak-mukunthu/AI-Builder-Sandbox), which needs no install. "Lab" means [data-flywheel-agent-lab](https://github.com/deepak-mukunthu/data-flywheel-agent-lab), run with `python3 serve.py` at http://localhost:8777.
 
 ## Part I. How AI works
 

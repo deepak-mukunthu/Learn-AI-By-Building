@@ -4,7 +4,7 @@ All projects are open source. Most need nothing beyond Python or Node.js. Check 
 
 | Project | Chapters | What it teaches | Needs | API key? |
 | --- | --- | --- | --- | --- |
-| [ai-builder-sandbox](https://github.com/deepak-mukunthu/ai-builder-sandbox) | 2, 4 to 11, Appendix G | Set up a small assistant with forms and watch the five parts change its answers | A browser | No |
+| [AI-Builder-Sandbox](https://github.com/deepak-mukunthu/AI-Builder-Sandbox) | 2, 4 to 11, Appendix G | Set up a small assistant with forms and watch the five parts change its answers | A browser | No |
 | [data-flywheel-agent-lab](https://github.com/deepak-mukunthu/data-flywheel-agent-lab) (ShopBot) | 2 to 9 | The whole agent, with planted problems to find and fix | Python | No |
 | [RAG-Explorer](https://github.com/deepak-mukunthu/RAG-Explorer) | 4 | Compare ways of chunking and searching your own documents | Python and Node.js | Optional |
 | [AgentTown](https://github.com/deepak-mukunthu/AgentTown) | 5, 7 | Memory and many agents in one simulation | Node.js | No, for the demo |
