@@ -23,4 +23,4 @@ enforced by the system, so explain them politely
 when they apply.
 ```
 
-Rules go in the prompt so the model can explain them, and in code so they hold.
+The last section carries the most weight. Rules go in the prompt so the model can *explain* them, and in code so they *hold*.

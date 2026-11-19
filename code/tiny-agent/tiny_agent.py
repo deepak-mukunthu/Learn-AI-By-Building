@@ -2,6 +2,7 @@
 # Runs offline. The "model" is a stand-in you can
 # swap for a real one later (see Appendix D).
 import json
+import re
 
 # ---- 1. Data the tools can reach ----------------
 CATALOG = {
@@ -53,8 +54,11 @@ def refund(order_id, user):
 TOOLS = {"get_product": get_product,
          "get_order": get_order,
          "refund": refund}
+NEEDS_USER = {"get_order", "refund"}  # who asks
 
 # ---- 3. The model (a fake one, for now) ----------
+SKU = re.compile(r"[A-Z]{3}-[0-9]{3}")  # ECH-800
+
 def fake_model(messages):
     """Reads the conversation and returns either a
     tool request or a final answer, as a real model
@@ -64,7 +68,7 @@ def fake_model(messages):
         return answer_from(json.loads(last["content"]))
     words = last["content"].replace("?", " ").split()
     for w in words:
-        if w in CATALOG:
+        if SKU.fullmatch(w):  # any SKU, real or not
             return {"tool": "get_product",
                     "args": {"sku": w}}
         if w.startswith("ORD-"):
@@ -98,6 +102,7 @@ def answer_from(data):
 # ---- 4. The harness: the loop around the model ---
 SYSTEM = ("You are ShopBot. Answer only from tool "
           "results. Never guess prices.")
+TRACE = []  # every tool call, for tests to check
 
 def run_turn(question, user, model=fake_model):
     messages = [{"role": "system", "content": SYSTEM},
@@ -110,13 +115,15 @@ def run_turn(question, user, model=fake_model):
             return reply["answer"]
         name, args = reply["tool"], reply["args"]
         print(f"  [trace] tool {name} {args}")
+        args.pop("user", None)  # the model can't pick
         if name not in TOOLS:
             result = {"error": f"unknown tool {name}"}
-        elif name == "get_product":
-            result = TOOLS[name](**args)
-        else:
+        elif name in NEEDS_USER:
             result = TOOLS[name](user=user, **args)
+        else:
+            result = TOOLS[name](**args)
         print(f"  [trace] result {result}")
+        TRACE.append((name, args, result))
         messages.append({"role": "assistant",
                          "content": json.dumps(reply)})
         messages.append({"role": "tool",

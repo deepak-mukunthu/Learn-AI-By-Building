@@ -18,10 +18,10 @@ The sandbox's "model" is a simulator that follows fixed rules, so everyone gets 
 
 | Folder | What it holds | Book reference |
 | --- | --- | --- |
-| [`code/tiny-agent/`](code/tiny-agent/) | A complete agent loop in about 140 lines of Python, a test set, and an optional real-model version. No libraries needed. | Appendix D, Appendix F |
-| [`templates/`](templates/) | Job card, test case sheet, debugging checklist, system prompt skeleton, weekly improvement hour | Appendix A, Appendix E |
+| [`code/tiny-agent/`](code/tiny-agent/) | A complete agent loop in about 140 lines of Python, a test set, an optional real-model version with an offline test, and `full/`, the agent with every Appendix D checkpoint applied. No libraries needed. | Appendix D, Appendix F |
+| [`templates/`](templates/) | Job card, test case sheet, debugging checklist, system prompt skeleton, weekly improvement hour, My Assistant worksheet | Appendix A, Appendix E |
 | [`templates/product-managers/`](templates/product-managers/) | One-page AI feature spec, questions for engineers, rollout and metrics, cost and benefit worksheet | Appendix H |
-| [`templates/builders/`](templates/builders/) | Ten help-desk test questions and a day-by-day 30-day checklist | Appendix G |
+| [`templates/builders/`](templates/builders/) | The Northwind practice documents, ten help-desk test questions, and a day-by-day 30-day checklist | Appendix A7, Appendix G |
 | [`docs/chapter-guide.md`](docs/chapter-guide.md) | What to do in each chapter, where, and what you should see | All chapters |
 | [`docs/projects.md`](docs/projects.md) | Every open-source project the book uses, with setup and common problems | Chapter 12, Appendix B |
 
@@ -30,7 +30,7 @@ The sandbox's "model" is a simulator that follows fixed rules, so everyone gets 
 | If you're a | Start with | Then |
 | --- | --- | --- |
 | **Product manager** | The sandbox, then [`templates/product-managers/`](templates/product-managers/) | Fill in the AI feature spec for a real idea, and take the questions for engineers to your next design review |
-| **Developer** | [`code/tiny-agent/`](code/tiny-agent/), then the [ShopBot lab](https://github.com/deepak-mukunthu/data-flywheel-agent-lab) | Add a tool and a test case, then swap in a real model with `real_model.py` |
+| **Developer** | [`code/tiny-agent/`](code/tiny-agent/), then the [ShopBot lab](https://github.com/deepak-mukunthu/AI-Data-Flywheel) | Add a tool and a test case, then swap in a real model with `real_model.py` |
 | **Builder** | The sandbox, then [`templates/builders/`](templates/builders/) | Build the help-desk assistant on a platform you already use, with the ten test questions |
 
 ## Run the tiny agent
@@ -41,14 +41,16 @@ python3 tiny_agent.py
 python3 check_agent.py
 ```
 
-You need Python 3 and nothing else. You should see traces for each question and `7 of 7 passed` at the end. On Windows, use `python` instead of `python3`.
+You need Python 3 and nothing else. You should see traces for each question and `8 of 8 passed` at the end. On Windows, use `python` instead of `python3`.
+
+To match the book exactly, check out the release it was written against: `git checkout book-edition-1`. If you download a ZIP, take it from the book-edition-1 release on the Releases page rather than the green Code button.
 
 ## Related projects
 
 The book uses a path of small open-source projects. The full list, with setup steps, is in [`docs/projects.md`](docs/projects.md). The main ones:
 
 - [AI-Builder-Sandbox](https://github.com/deepak-mukunthu/AI-Builder-Sandbox): configure a small assistant with forms, no install
-- [data-flywheel-agent-lab](https://github.com/deepak-mukunthu/data-flywheel-agent-lab): ShopBot, with planted problems to find and fix
+- [AI-Data-Flywheel](https://github.com/deepak-mukunthu/AI-Data-Flywheel): ShopBot, with planted problems to find and fix
 - [RAG-Explorer](https://github.com/deepak-mukunthu/RAG-Explorer): chunking and search
 - [AI-RedTeaming-Framework](https://github.com/deepak-mukunthu/AI-RedTeaming-Framework): test an agent's guardrails
 - [AI-Cost-Optimization](https://github.com/deepak-mukunthu/AI-Cost-Optimization): tokens and cost

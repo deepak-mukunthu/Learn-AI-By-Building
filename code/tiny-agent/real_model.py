@@ -3,7 +3,7 @@
 # the ANTHROPIC_API_KEY environment variable.
 import json
 import anthropic
-from tiny_agent import run_turn, SYSTEM
+from tiny_agent import run_turn, TOOLS
 
 client = anthropic.Anthropic()
 MODEL = "claude-haiku-5-5"  # a small, cheap model
@@ -16,7 +16,7 @@ def tool(name, desc, **fields):
                 "required": list(fields)}}
 
 TEXT = {"type": "string"}
-TOOL_SPECS = [
+SPECS = [
     tool("get_product", "Price and stock for a "
          "product, by SKU like ECH-800", sku=TEXT),
     tool("get_order", "Status of one of this "
@@ -24,6 +24,11 @@ TOOL_SPECS = [
          order_id=TEXT),
     tool("refund", "Refund an order in full. "
          "Rules are checked in code.",
+         order_id=TEXT),
+    tool("search_policy", "Store policy passages "
+         "that match a question", query=TEXT),
+    tool("get_shipping", "Carrier and days to ship "
+         "for one of this customer's orders",
          order_id=TEXT),
 ]
 
@@ -38,11 +43,7 @@ def to_api(messages):
             r = json.loads(m["content"])
             last_id = r["id"]
             out.append({"role": "assistant",
-                        "content": [{
-                            "type": "tool_use",
-                            "id": r["id"],
-                            "name": r["tool"],
-                            "input": r["args"]}]})
+                        "content": r["blocks"]})
         else:  # a tool result
             out.append({"role": "user",
                         "content": [{
@@ -53,15 +54,30 @@ def to_api(messages):
 
 def real_model(messages):
     r = client.messages.create(
-        model=MODEL, max_tokens=300,
-        system=SYSTEM, tools=TOOL_SPECS,
+        model=MODEL, max_tokens=2000,
+        system=messages[0]["content"],  # + notes
+        tools=[s for s in SPECS if s["name"] in TOOLS],
+        tool_choice={"type": "auto",  # one at a time
+                     "disable_parallel_tool_use": True},
         messages=to_api(messages))
+    if r.stop_reason == "max_tokens":
+        return {"answer": "Sorry, I ran out of room. "
+                "A person will help."}
     for block in r.content:
         if block.type == "tool_use":
+            # Send every block back with the result,
+            # thinking blocks included.
+            blocks = [b.model_dump(exclude_none=True)
+                      for b in r.content]
             return {"tool": block.name,
-                    "args": block.input,
-                    "id": block.id}
-    return {"answer": r.content[0].text}
+                    "args": dict(block.input),
+                    "id": block.id, "blocks": blocks}
+    # Answers may start with a thinking block, so
+    # pick out the text blocks by type.
+    text = "".join(b.text for b in r.content
+                   if b.type == "text").strip()
+    return {"answer": text or "Sorry, I have no "
+            "answer. A person will help."}
 
 if __name__ == "__main__":
     q = "Is ECH-800 available?"

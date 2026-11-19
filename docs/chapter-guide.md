@@ -1,49 +1,52 @@
 # Chapter guide
 
-What you do in each chapter, where to do it, and what you should see. "Sandbox" means [AI-Builder-Sandbox](https://github.com/deepak-mukunthu/AI-Builder-Sandbox), which needs no install. "Lab" means [data-flywheel-agent-lab](https://github.com/deepak-mukunthu/data-flywheel-agent-lab), run with `python3 serve.py` at http://localhost:8777.
+What you do in each chapter, where to do it, and what you should see. "Sandbox" means [AI-Builder-Sandbox](https://github.com/deepak-mukunthu/AI-Builder-Sandbox), which needs no install. "Lab" means [AI-Data-Flywheel](https://github.com/deepak-mukunthu/AI-Data-Flywheel) (ShopBot), run with `python3 serve.py` at http://localhost:8777.
+
+Match the book's version. After cloning any project, run `git checkout book-edition-1`, or download the `book-edition-1` release ZIP from the project's Releases page. See [projects.md](projects.md).
 
 ## Part I. How AI works
 
 | Ch | Title | Do | Where | You should see |
 | --- | --- | --- | --- | --- |
-| 1 | What a Model Actually Does | Count tokens, change temperature, test what a model can and can't know | Any AI chat app | The same question gives different wording at different temperatures. The model knows nothing you didn't send it. |
-| 2 | From Chatbot to Agent | Run ShopBot and make it fail | Lab, or sandbox with ShopBot mini | A first quality score of 76 out of 100. Task success is only 27% even though intent accuracy and grounding are 100%. |
-| 3 | Your First Debugging Session | Open scenario S11 and guess which part failed for five traces | Lab (Traces & Tagging) | Five complaints, five different parts, and none of them the model. |
+| 1 | What a Model Actually Does | Three ten-minute experiments: test statelessness, missing facts, and randomness | Any AI chat app | A new chat doesn't know your favorite color. An invented price for a store the model can't know. Varied coffee shop names, but 391 for 17 × 23. |
+| 2 | From Chatbot to Agent | Run ShopBot on your laptop | Lab, or sandbox with ShopBot mini | Quality 76 out of 100, from 15 conversations. Task success is only 27%. |
+| 3 | Your First Debugging Session | Play the guessing game: open five failed conversations in Traces & Tagging and guess which part failed | Lab, or sandbox ShopBot mini with Load broken version | Five failures, and none of them is the model. S03, S04, and S12 are context failures. S11 and S10 are harness failures. S09 is a memory failure only. |
 
 ## Part II. Build the parts around the model
 
 | Ch | Title | Do | Where | You should see |
 | --- | --- | --- | --- | --- |
-| 4 | Context | Fix the missing products (`catalogTopK` 3 to 8) | Lab, or sandbox Help desk, tab 2 Knowledge | Quality 80. S03 now says the Echo Studio Mic is out of stock. Task success rises from 27% to 60%. |
-| 5 | Memory | Turn memory on and check what it keeps | Lab, or sandbox tab 3 Memory | The assistant stops asking for what it already knows. |
-| 6 | Tools | Find the stale price and fix its source | Lab, or sandbox tab 4 Tools & Rules | The price comes from the tool, so it follows the data. |
-| 7 | Guardrails | Enforce the refund limit in code | Lab, or sandbox tab 4 | The $400 refund goes to a person. By the end of this chapter the lab score is 98. |
+| 4 | Context: What the Model Sees | Apply the "Catalog truncated in context window" fix (`catalogTopK` 3 to 8) | Lab, or sandbox Help desk, tab 2 Knowledge | v2 at quality 80, up from 76. S03 now says the Echo Studio Mic is out of stock. Task success rises from 27% to 60%. |
+| 5 | Memory: What the Agent Keeps | Turn on customer profile memory, then lower the temperature | Lab, or sandbox ShopBot mini, tab 3 Memory | v3: "No re-ask" goes from 67% to 100%, quality 82. v4: quality stays at 82, and p95 latency drops from 588 to 451 milliseconds. |
+| 6 | Tools: Where the Facts Come From | Switch the pricing source from stale to live | Lab, or sandbox ShopBot mini, tab 4 Tools & Rules | The tool step reads "$69" with a source of "live". v5 shows quality 91, up from 82, and grounding back at 100%. |
+| 7 | Guardrails: Rules That Hold | Enable the refund guardrail | Lab (scenario S11), or sandbox ShopBot mini, tab 4 | The $400 refund goes to a person for approval. Policy safety goes from 87% to 100%, and quality reads 98. |
 
 ## Part III. Test it, improve it, afford it
 
 | Ch | Title | Do | Where | You should see |
 | --- | --- | --- | --- | --- |
-| 8 | Evals | Read a test case, add one of your own, change the weights | Lab (js/scenarios.js), or sandbox tab 5 Test | Six checks that add up to one score, and a fix you can measure. |
-| 9 | Traces and the Improvement Loop | Run one turn of the weekly loop | Lab, or sandbox tab 5 with the Trace buttons | The lab reaches 100 after the last fix. |
-| 10 | What It Costs | Run the cost simulator, then redo the worked example on paper | [AI-Cost-Optimization](https://github.com/deepak-mukunthu/AI-Cost-Optimization) | About 3.06 million tokens and $16.10 for the baseline session, and about 469,000 tokens and $0.78 with all strategies on. |
+| 8 | Evals: How You Know It Works | Run 5× repeats, then add a sixteenth case (S16) in `js/scenarios.js` | Lab, or sandbox tab 5 Test | 75 traces (15 scenarios times 5). At v1, quality 76 and task success 27%. S16 fails at v1 on task success only (5 of 6 checks) and passes from v5 on. |
+| 9 | Traces and the Improvement Loop | Finish ShopBot: raise recall accuracy (v7), then apply the scoped system prompt (v8) | Lab, or sandbox tab 5 with the Trace buttons | After v7, quality stays at 98. After v8, scope and task success read 100% and quality reads 100. |
+| 10 | What It Costs | Run the cost simulator, or redo the worked example on paper | [AI-Cost-Optimization](https://github.com/deepak-mukunthu/AI-Cost-Optimization), or the sandbox cost strip | About 3.06 million tokens and $16.10 for the 50-turn baseline, and about 469,000 tokens and $0.78 with all strategies on. |
 
 ## Part IV. Build your own
 
 | Ch | Title | Do | Where | You should see |
 | --- | --- | --- | --- | --- |
-| 11 | Your First 30 Days | Fill in a job card, write a test sheet, set a go/no-go rule | [templates/](../templates/) | A one-page plan with numbers you wrote down before building. |
+| 11 | Your First 30 Days | Write your job card | [templates/job-card.md](../templates/job-card.md) | One page with nine filled lines. |
 | 12 | Keep Building | Pick a project from the path and run it | [projects.md](projects.md) | One more project running, and one change you predicted before making it. |
 
 ## Appendices
 
 | Appendix | Topic | Companion material |
 | --- | --- | --- |
-| A | Starter templates | [templates/](../templates/) |
+| A | Starter templates (A1 job card, A2 test case sheet, A3 debugging checklist, A4 system prompt skeleton, A5 weekly improvement hour, A6 My Assistant worksheet, A7 Northwind document pack) | [templates/](../templates/) |
 | B | Project guides and troubleshooting | [projects.md](projects.md) |
-| D | Build a tiny agent from scratch | [code/tiny-agent/](../code/tiny-agent/) |
+| C | Answers to "Check Yourself" | In the book |
+| D | Build a tiny agent from scratch | [code/tiny-agent/](../code/tiny-agent/). The `full` folder, [code/tiny-agent/full/](../code/tiny-agent/full/), has every checkpoint applied, and its `check_agent.py` runs 14 checks. The top-level `check_agent.py` prints 8 of 8 passed. |
 | E | A prompt workshop | [templates/system-prompt-skeleton.md](../templates/system-prompt-skeleton.md) |
-| F | For developers | [code/tiny-agent/real_model.py](../code/tiny-agent/real_model.py) |
+| F | For developers | [code/tiny-agent/real_model.py](../code/tiny-agent/real_model.py), and [code/tiny-agent/test_real_model.py](../code/tiny-agent/test_real_model.py), an offline test (8 checks, no key, no cost) that should print 8 of 8 passed |
 | G | For builders | [templates/builders/](../templates/builders/) |
 | H | For product managers | [templates/product-managers/](../templates/product-managers/) |
 
-The lab's numbers come from a deterministic simulator, so you get exactly the numbers above. The simulator is a teaching tool with planted problems, not a benchmark of any real product.
+The lab's numbers come from a deterministic simulator, so you get exactly the numbers above when you apply the fixes in the book's order. The simulator is a teaching tool with planted problems, not a benchmark of any real product.
