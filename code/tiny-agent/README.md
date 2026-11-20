@@ -10,6 +10,21 @@ A complete agent loop in about 140 lines of Python, with no libraries and no API
 | `test_real_model.py` | An offline test of `real_model.py` with canned replies: text only, thinking then text, a tool call, a reply cut off at the token limit. No key, no cost. |
 | `full/` | The agent with every Appendix D checkpoint applied (policy search, memory notes, shipping, the rogue-model test, the final-sale rule). Compare it with your own version. |
 
+## Which version to run
+
+There are three versions of the same agent. Each command runs from the folder named in the first column.
+
+| Version | When to use it | Command | Uses | You should see |
+| --- | --- | --- | --- | --- |
+| Base (`tiny-agent/`) | Reading Appendix D for the first time | `python3 check_agent.py` | `tiny_agent.py`, `check_agent.py` | `8 of 8 passed` |
+| Completed (`tiny-agent/full/`) | Checking your work after the Appendix D checkpoints | `python3 check_agent.py` | `full/tiny_agent.py`, `full/check_agent.py` | `14 of 14 passed` |
+| Real model, offline check | Before you spend anything on an API key | `python3 test_real_model.py` | `real_model.py` with canned replies | `8 of 8 passed` |
+| Real model, live | After the offline check passes | `python3 real_model.py` | `real_model.py`, `tiny_agent.py`, your API key | A trace and an answer about ECH-800 |
+
+`real_model.py` loads `tiny_agent.py` from its own folder, so the live run in `full/` uses the completed agent and the one in `tiny-agent/` uses the base agent.
+
+To add a tool of your own: write the function in `tiny_agent.py`, add it to `TOOLS`, add its description to `SPECS` in `real_model.py` if you'll use a real model, and add one test to `check_agent.py` that checks the action in the trace, not only the words in the answer. Then run the checks again. The count should go up by one, with nothing else failing.
+
 ## Run it
 
 ```
