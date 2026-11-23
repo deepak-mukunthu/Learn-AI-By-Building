@@ -1,6 +1,6 @@
 # Chapter guide
 
-What you do in each chapter, where to do it, and what you should see. "Sandbox" means [AI-Builder-Sandbox](https://github.com/deepak-mukunthu/AI-Builder-Sandbox), which needs no install. "Lab" means [AI-Data-Flywheel](https://github.com/deepak-mukunthu/AI-Data-Flywheel) (ShopBot), run with `python3 serve.py` at http://localhost:8777.
+What you do in each chapter, where to do it, and what you should see. Both "Lab" and "Sandbox" are screens of the [AI Builder Lab](https://github.com/deepak-mukunthu/AI-Builder-Lab), which you open by double-clicking `index.html`, with nothing to install. "Lab" means its ShopBot screens. "Sandbox" means its Sandbox screen, the last item in the menu.
 
 Match the book's version. After cloning any project, run `git checkout book-edition-1`, or download the `book-edition-1` release ZIP from the project's Releases page. See [projects.md](projects.md).
 
@@ -9,25 +9,25 @@ Match the book's version. After cloning any project, run `git checkout book-edit
 | Ch | Title | Do | Where | You should see |
 | --- | --- | --- | --- | --- |
 | 1 | What a Model Actually Does | Three ten-minute experiments: test statelessness, missing facts, and randomness | Any AI chat app | A new chat doesn't know your favorite color. An invented price for a store the model can't know. Varied coffee shop names, but 391 for 17 × 23. |
-| 2 | From Chatbot to Agent | Run ShopBot on your laptop | Lab, or sandbox with ShopBot mini | Quality 76 out of 100, from 15 conversations. Task success is only 27%. |
-| 3 | Your First Debugging Session | Play the guessing game: open five failed conversations in Traces & Tagging and guess which part failed | Lab, or sandbox ShopBot mini with Load broken version | Five failures, and none of them is the model. S03, S04, and S12 are context failures. S11 and S10 are harness failures. S09 is a memory failure only. |
+| 2 | From Chatbot to Agent | Run ShopBot on your laptop | Lab, or Sandbox with ShopBot mini | Quality 76 out of 100, from 15 conversations. Task success is only 27%. |
+| 3 | Your First Debugging Session | Play the guessing game: open five failed conversations in Traces & Tagging and guess which part failed | Lab, or Sandbox ShopBot mini with Load broken version | Five failures, and none of them is the model. S03, S04, and S12 are context failures. S11 and S10 are harness failures. S09 is a memory failure only. |
 
 ## Part II. Build the parts around the model
 
 | Ch | Title | Do | Where | You should see |
 | --- | --- | --- | --- | --- |
-| 4 | Context: What the Model Sees | Apply the "Catalog truncated in context window" fix (`catalogTopK` 3 to 8) | Lab, or sandbox Help desk, tab 2 Knowledge | v2 at quality 80, up from 76. S03 now says the Echo Studio Mic is out of stock. Task success rises from 27% to 60%. |
-| 5 | Memory: What the Agent Keeps | Turn on customer profile memory, then lower the temperature | Lab, or sandbox ShopBot mini, tab 3 Memory | v3: "No re-ask" goes from 67% to 100%, quality 82. v4: quality stays at 82, and p95 latency drops from 588 to 451 milliseconds. |
-| 6 | Tools: Where the Facts Come From | Switch the pricing source from stale to live | Lab, or sandbox ShopBot mini, tab 4 Tools & Rules | The tool step reads "$69" with a source of "live". v5 shows quality 91, up from 82, and grounding back at 100%. |
-| 7 | Guardrails: Rules That Hold | Enable the refund guardrail | Lab (scenario S11), or sandbox ShopBot mini, tab 4 | The $400 refund goes to a person for approval. Policy safety goes from 87% to 100%, and quality reads 98. |
+| 4 | Context: What the Model Sees | Apply the "Catalog truncated in context window" fix (`catalogTopK` 3 to 8) | Lab, or Sandbox Help desk, tab 2 Knowledge | v2 at quality 80, up from 76. S03 now says the Echo Studio Mic is out of stock. Task success rises from 27% to 60%. |
+| 5 | Memory: What the Agent Keeps | Turn on customer profile memory, then lower the temperature | Lab, or Sandbox ShopBot mini, tab 3 Memory | v3: "No re-ask" goes from 67% to 100%, quality 82. v4: quality stays at 82, and p95 latency drops from 588 to 451 milliseconds. |
+| 6 | Tools: Where the Facts Come From | Switch the pricing source from stale to live | Lab, or Sandbox ShopBot mini, tab 4 Tools & Rules | The tool step reads "$69" with a source of "live". v5 shows quality 91, up from 82, and grounding back at 100%. |
+| 7 | Guardrails: Rules That Hold | Enable the refund guardrail | Lab (scenario S11), or Sandbox ShopBot mini, tab 4 | The $400 refund goes to a person for approval. Policy safety goes from 87% to 100%, and quality reads 98. |
 
 ## Part III. Test it, improve it, afford it
 
 | Ch | Title | Do | Where | You should see |
 | --- | --- | --- | --- | --- |
-| 8 | Evals: How You Know It Works | Run 5× repeats, then add a sixteenth case (S16) in `js/scenarios.js` | Lab, or sandbox tab 5 Test | 75 traces (15 scenarios times 5). At v1, quality 76 and task success 27%. S16 fails at v1 on task success only (5 of 6 checks) and passes from v5 on. |
-| 9 | Traces and the Improvement Loop | Finish ShopBot: raise recall accuracy (v7), then apply the scoped system prompt (v8) | Lab, or sandbox tab 5 with the Trace buttons | After v7, quality stays at 98. After v8, scope and task success read 100% and quality reads 100. |
-| 10 | What It Costs | Run the cost simulator, or redo the worked example on paper | [AI-Cost-Optimization](https://github.com/deepak-mukunthu/AI-Cost-Optimization), or the sandbox cost strip | About 3.06 million tokens and $16.10 for the 50-turn baseline, and about 469,000 tokens and $0.78 with all strategies on. |
+| 8 | Evals: How You Know It Works | Run 5× repeats, then add a sixteenth case (S16) in `js/scenarios.js` | Lab, or Sandbox tab 5 Test | 75 traces (15 scenarios times 5). At v1, quality 76 and task success 27%. S16 fails at v1 on task success only (5 of 6 checks) and passes from v5 on. |
+| 9 | Traces and the Improvement Loop | Finish ShopBot: raise recall accuracy (v7), then apply the scoped system prompt (v8) | Lab, or Sandbox tab 5 with the Trace buttons | After v7, quality stays at 98. After v8, scope and task success read 100% and quality reads 100. |
+| 10 | What It Costs | Run the cost simulator, or redo the worked example on paper | [AI-Cost-Optimization](https://github.com/deepak-mukunthu/AI-Cost-Optimization), or the Sandbox cost strip | About 3.06 million tokens and $16.10 for the 50-turn baseline, and about 469,000 tokens and $0.78 with all strategies on. |
 
 ## Part IV. Build your own
 

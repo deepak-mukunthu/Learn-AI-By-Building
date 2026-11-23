@@ -8,11 +8,11 @@ The habit that connects it all: when an AI product gives a wrong answer, check t
 
 ## Start in ten minutes, with nothing to install
 
-1. Open the [AI-Builder-Sandbox](https://github.com/deepak-mukunthu/AI-Builder-Sandbox) project. Click **Code**, then **Download ZIP**, unzip it, and double-click `index.html`.
-2. Choose **ShopBot mini**, click **Load broken version**, open the **5 Test** tab, and click **Run all tests**. The score is 30%.
+1. Open the [AI Builder Lab](https://github.com/deepak-mukunthu/AI-Builder-Lab) project. Click **Releases**, open **book-edition-1**, download **Source code (zip)**, unzip it, and double-click `index.html`.
+2. Click **Sandbox** in the lab's menu. Choose **ShopBot mini**, click **Load broken version**, open the **5 Test** tab, and click **Run all tests**. The score is 30%.
 3. Open a failing test's trace, find the part that's missing something, fix it, and run the tests again. Five fixes take the score to 100%.
 
-The sandbox's "model" is a simulator that follows fixed rules, so everyone gets the same results. Real models are less predictable, and the book explains how to handle that.
+The Sandbox's "model" is a simulator that follows fixed rules, so everyone gets the same results. Real models are less predictable, and the book explains how to handle that.
 
 ## What's here
 
@@ -29,9 +29,9 @@ The sandbox's "model" is a simulator that follows fixed rules, so everyone gets 
 
 | If you're a | Start with | Then |
 | --- | --- | --- |
-| **Product manager** | The sandbox, then [`templates/product-managers/`](templates/product-managers/) | Fill in the AI feature spec for a real idea, and take the questions for engineers to your next design review |
-| **Developer** | [`code/tiny-agent/`](code/tiny-agent/), then the [ShopBot lab](https://github.com/deepak-mukunthu/AI-Data-Flywheel) | Add a tool and a test case, then swap in a real model with `real_model.py` |
-| **Builder** | The sandbox, then [`templates/builders/`](templates/builders/) | Build the help-desk assistant on a platform you already use, with the ten test questions |
+| **Product manager** | The lab's Sandbox, then [`templates/product-managers/`](templates/product-managers/) | Fill in the AI feature spec for a real idea, and take the questions for engineers to your next design review |
+| **Developer** | [`code/tiny-agent/`](code/tiny-agent/), then the ShopBot screens of the [AI Builder Lab](https://github.com/deepak-mukunthu/AI-Builder-Lab) | Add a tool and a test case, then swap in a real model with `real_model.py` |
+| **Builder** | The lab's Sandbox, then [`templates/builders/`](templates/builders/) | Build the help-desk assistant on a platform you already use, with the ten test questions |
 
 ## Run the tiny agent
 
@@ -49,8 +49,7 @@ To match the book exactly, check out the release it was written against: `git ch
 
 The book uses a path of small open-source projects. The full list, with setup steps, is in [`docs/projects.md`](docs/projects.md). The main ones:
 
-- [AI-Builder-Sandbox](https://github.com/deepak-mukunthu/AI-Builder-Sandbox): configure a small assistant with forms, no install
-- [AI-Data-Flywheel](https://github.com/deepak-mukunthu/AI-Data-Flywheel): ShopBot, with planted problems to find and fix
+- [AI-Builder-Lab](https://github.com/deepak-mukunthu/AI-Builder-Lab): ShopBot, with planted problems to find and fix, and the Sandbox, where you configure a small assistant with forms. No install
 - [RAG-Explorer](https://github.com/deepak-mukunthu/RAG-Explorer): chunking and search
 - [AI-RedTeaming-Framework](https://github.com/deepak-mukunthu/AI-RedTeaming-Framework): test an agent's guardrails
 - [AI-Cost-Optimization](https://github.com/deepak-mukunthu/AI-Cost-Optimization): tokens and cost
