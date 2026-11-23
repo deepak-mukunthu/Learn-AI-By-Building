@@ -1,6 +1,6 @@
 # Tiny agent
 
-A complete agent loop in about 140 lines of Python, with no libraries and no API key. It is Appendix D of the book.
+A complete agent loop in about 145 lines of Python, with no libraries and no API key. It is Appendix D of the book.
 
 | File | What it is |
 | --- | --- |
