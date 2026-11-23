@@ -1,6 +1,6 @@
 # The Northwind document pack
 
-Practice material. Northwind Outdoor is an invented company of 60 people. These five short pages are written for practice, so you can build and test a help-desk assistant without using real workplace documents. Copy each into its own file.
+Practice material. Northwind Outdoor is an invented company of 600 people. These five short pages are written for practice, so you can build and test a help-desk assistant without using real workplace documents. Copy each into its own file.
 
 Page 4 is deliberately out of date, and a good assistant should never answer from it. Leave it out of your normal build. You add it back only for the stale-document test, to see whether the assistant still prefers the current page when an old copy is competing with it, which is what happens in most real document folders.
 
@@ -8,7 +8,7 @@ Page 4 is deliberately out of date, and a good assistant should never answer fro
 
 **2 · Expenses (updated March 2026).** Submit receipts within 30 days. Meals while traveling are covered up to $60 a day. Anything over $500 needs your manager's approval before you buy it. You can't approve your own expenses. Alcohol isn't reimbursed.
 
-**3 · Remote work (updated February 2026).** Staff may work remotely up to three days a week. Tuesdays and Thursdays are office days for everyone. Working from another country for more than 14 days needs approval from People Operations.
+**3 · Remote work (updated February 2026).** Staff may work remotely up to three days a week. Tuesdays and Thursdays are office days for everyone. Working from another country for up to 14 days needs no extra approval. Longer stays need approval from People Operations.
 
 **4 · Remote work (2024, retired).** Staff may work remotely any day with their manager's agreement. There are no set office days.
 
