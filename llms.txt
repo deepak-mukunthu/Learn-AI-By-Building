@@ -1,0 +1,47 @@
+# Learn AI by Building: companion repository
+
+> Code, templates and guides for the book "Learn AI by Building: Find Out Why AI Agents Fail, and How to Build Ones You Can Trust" by Deepak Mukunthu. The book teaches product managers, developers and builders to debug and build AI agents by checking the parts around the model (context, memory, tools, harness) before blaming the model. The book text is not included. Everything here is MIT licensed, and all example data is fictional.
+
+The book's numbers come from deterministic simulators, so a reader on the tag book-edition-1 gets exactly the results the book reports. Agents helping a reader should read AGENTS.md first.
+
+## Start here
+
+- [README](https://raw.githubusercontent.com/deepak-mukunthu/Learn-AI-By-Building/main/README.md): what's here and which path to take
+- [AGENTS.md](https://raw.githubusercontent.com/deepak-mukunthu/Learn-AI-By-Building/main/AGENTS.md): how to run things and how to help a reader
+- [Chapter guide](https://raw.githubusercontent.com/deepak-mukunthu/Learn-AI-By-Building/main/docs/chapter-guide.md): what to do in each chapter and what you should see
+- [Projects](https://raw.githubusercontent.com/deepak-mukunthu/Learn-AI-By-Building/main/docs/projects.md): every open-source project the book uses, with setup and common problems
+
+## Code
+
+- [Tiny agent guide](https://raw.githubusercontent.com/deepak-mukunthu/Learn-AI-By-Building/main/code/tiny-agent/README.md): which version to run and the exercises
+- [tiny_agent.py](https://raw.githubusercontent.com/deepak-mukunthu/Learn-AI-By-Building/main/code/tiny-agent/tiny_agent.py): an agent loop in plain Python
+- [check_agent.py](https://raw.githubusercontent.com/deepak-mukunthu/Learn-AI-By-Building/main/code/tiny-agent/check_agent.py): its 8 checks
+- [real_model.py](https://raw.githubusercontent.com/deepak-mukunthu/Learn-AI-By-Building/main/code/tiny-agent/real_model.py): the same agent with a real model
+- [full/tiny_agent.py](https://raw.githubusercontent.com/deepak-mukunthu/Learn-AI-By-Building/main/code/tiny-agent/full/tiny_agent.py): the agent with every Appendix D checkpoint applied
+
+## Templates
+
+- [Job card](https://raw.githubusercontent.com/deepak-mukunthu/Learn-AI-By-Building/main/templates/job-card.md)
+- [Test case sheet](https://raw.githubusercontent.com/deepak-mukunthu/Learn-AI-By-Building/main/templates/test-case-sheet.md)
+- [Debugging checklist](https://raw.githubusercontent.com/deepak-mukunthu/Learn-AI-By-Building/main/templates/debugging-checklist.md)
+- [System prompt skeleton](https://raw.githubusercontent.com/deepak-mukunthu/Learn-AI-By-Building/main/templates/system-prompt-skeleton.md)
+- [Weekly improvement hour](https://raw.githubusercontent.com/deepak-mukunthu/Learn-AI-By-Building/main/templates/weekly-improvement-hour.md)
+- [My Assistant worksheet](https://raw.githubusercontent.com/deepak-mukunthu/Learn-AI-By-Building/main/templates/my-assistant-worksheet.md)
+
+## Product managers
+
+- [AI feature spec](https://raw.githubusercontent.com/deepak-mukunthu/Learn-AI-By-Building/main/templates/product-managers/ai-feature-spec.md)
+- [Questions for engineers](https://raw.githubusercontent.com/deepak-mukunthu/Learn-AI-By-Building/main/templates/product-managers/questions-for-engineers.md)
+- [Rollout and metrics](https://raw.githubusercontent.com/deepak-mukunthu/Learn-AI-By-Building/main/templates/product-managers/rollout-and-metrics.md)
+- [Cost and benefit worksheet](https://raw.githubusercontent.com/deepak-mukunthu/Learn-AI-By-Building/main/templates/product-managers/cost-benefit-worksheet.md)
+
+## Builders
+
+- [Northwind document pack](https://raw.githubusercontent.com/deepak-mukunthu/Learn-AI-By-Building/main/templates/builders/northwind-document-pack.md): practice documents for a help-desk assistant
+- [Help-desk test questions](https://raw.githubusercontent.com/deepak-mukunthu/Learn-AI-By-Building/main/templates/builders/helpdesk-test-questions.md)
+- [30-day checklist](https://raw.githubusercontent.com/deepak-mukunthu/Learn-AI-By-Building/main/templates/builders/30-day-checklist.md)
+
+## Optional
+
+- [AI Builder Lab](https://github.com/deepak-mukunthu/AI-Builder-Lab): ShopBot and the Sandbox, the browser exercises for Chapters 2 to 10. Its AGENTS.md lists the expected scores.
+- [test_real_model.py](https://raw.githubusercontent.com/deepak-mukunthu/Learn-AI-By-Building/main/code/tiny-agent/test_real_model.py): offline test for the real-model version

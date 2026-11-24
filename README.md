@@ -18,7 +18,7 @@ The Sandbox's "model" is a simulator that follows fixed rules, so everyone gets 
 
 | Folder | What it holds | Book reference |
 | --- | --- | --- |
-| [`code/tiny-agent/`](code/tiny-agent/) | A complete agent loop in about 140 lines of Python, a test set, an optional real-model version with an offline test, and `full/`, the agent with every Appendix D checkpoint applied. No libraries needed. | Appendix D, Appendix F |
+| [`code/tiny-agent/`](code/tiny-agent/) | A complete agent loop in about 145 lines of Python, a test set, an optional real-model version with an offline test, and `full/`, the agent with every Appendix D checkpoint applied. No libraries needed. | Appendix D, Appendix F |
 | [`templates/`](templates/) | Job card, test case sheet, debugging checklist, system prompt skeleton, weekly improvement hour, My Assistant worksheet | Appendix A, Appendix E |
 | [`templates/product-managers/`](templates/product-managers/) | One-page AI feature spec, questions for engineers, rollout and metrics, cost and benefit worksheet | Appendix H |
 | [`templates/builders/`](templates/builders/) | The Northwind practice documents, ten help-desk test questions, and a day-by-day 30-day checklist | Appendix A7, Appendix G |
