@@ -2,7 +2,7 @@
 
 Code, templates, and guides that go with the book **Learn AI by Building: A Practical Guide for Product Managers, Developers, and Builders** by Deepak Mukunthu.
 
-The book teaches AI through one running assistant, ShopBot, and seven skills: understand the model, see the whole system, find the real cause of a failure, give it the right information, connect it to real systems safely, prove it works, and make it affordable. This repository holds everything you can copy, run, and adapt while you read. You don't need the book to use the templates, but the chapter guide shows where each piece fits.
+The book teaches AI through one running assistant, ShopBot. Chapter by chapter, you find what's wrong in each part around its model (context, memory, tools, and the code that runs it), fix it, and prove the fix with tests, taking ShopBot from 76 to 100. Then you build an agent of your own the same way. This repository holds everything you can copy, run, and adapt while you read. You don't need the book to use the templates, but the chapter guide shows where each piece fits.
 
 The habit that connects it all: when an AI product gives a wrong answer, check the parts around the model before you blame the model.
 
@@ -19,6 +19,7 @@ The Sandbox's "model" is a simulator that follows fixed rules, so everyone gets 
 | Folder | What it holds | Book reference |
 | --- | --- | --- |
 | [`code/tiny-agent/`](code/tiny-agent/) | A complete agent loop in about 145 lines of Python, a test set, an optional real-model version with an offline test, and `full/`, the agent with every Appendix D checkpoint applied. No libraries needed. | Appendix D, Appendix F |
+| [`code/three-agents/`](code/three-agents/) | One loop running three agents (a store, a bank, an IT help desk), each a short file of settings, with 15 checks | Chapter 2, Appendix D |
 | [`templates/`](templates/) | Job card, test case sheet, debugging checklist, system prompt skeleton, weekly improvement hour, My Assistant worksheet | Appendix A, Appendix E |
 | [`templates/product-managers/`](templates/product-managers/) | One-page AI feature spec, questions for engineers, rollout and metrics, cost and benefit worksheet | Appendix H |
 | [`templates/builders/`](templates/builders/) | The Northwind practice documents, ten help-desk test questions, and a day-by-day 30-day checklist | Appendix A7, Appendix G |

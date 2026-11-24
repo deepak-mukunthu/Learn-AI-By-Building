@@ -18,6 +18,7 @@ The book's numbers come from deterministic simulators, so a reader on the tag bo
 - [tiny_agent.py](https://raw.githubusercontent.com/deepak-mukunthu/Learn-AI-By-Building/main/code/tiny-agent/tiny_agent.py): an agent loop in plain Python
 - [check_agent.py](https://raw.githubusercontent.com/deepak-mukunthu/Learn-AI-By-Building/main/code/tiny-agent/check_agent.py): its 8 checks
 - [real_model.py](https://raw.githubusercontent.com/deepak-mukunthu/Learn-AI-By-Building/main/code/tiny-agent/real_model.py): the same agent with a real model
+- [Three agents, one loop](https://raw.githubusercontent.com/deepak-mukunthu/Learn-AI-By-Building/main/code/three-agents/README.md): a store, a bank, and an IT help desk run by the same loop, each a short file of settings
 - [full/tiny_agent.py](https://raw.githubusercontent.com/deepak-mukunthu/Learn-AI-By-Building/main/code/tiny-agent/full/tiny_agent.py): the agent with every Appendix D checkpoint applied
 
 ## Templates

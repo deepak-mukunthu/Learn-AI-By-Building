@@ -17,6 +17,8 @@ code/tiny-agent/            an agent loop in plain Python (Appendix D, F)
   real_model.py             optional real-model version
   test_real_model.py        offline test for it, canned replies
   full/                     the agent with every Appendix D checkpoint
+code/three-agents/          one loop, three agents (shop, bank,
+                            help desk), each a file of settings
 templates/                  job card, test case sheet, debugging checklist,
                             system prompt skeleton, weekly improvement hour,
                             My Assistant worksheet (Appendix A, E)
@@ -39,6 +41,7 @@ Python 3 only, no packages. On Windows use `python`.
 | `code/tiny-agent/` | `python3 check_agent.py` | `8 of 8 passed` |
 | `code/tiny-agent/` | `python3 test_real_model.py` | `8 of 8 passed`, no network |
 | `code/tiny-agent/full/` | `python3 check_agent.py` | `14 of 14 passed` |
+| `code/three-agents/` | `python3 check_agents.py` | `15 of 15 passed` |
 
 `python3 tiny_agent.py` prints a trace for each question. `python3 real_model.py` calls a real provider and needs the reader's API key. Don't run it without the reader's say-so, since it costs money.
 
@@ -61,5 +64,5 @@ The interactive exercises live in [AI-Builder-Lab](https://github.com/deepak-muk
 ## Changing the code
 
 - Keep the tiny agent free of third-party packages, and keep the code lines short enough to print in the book.
-- After a change, run all three checks above and report the counts.
+- After a change, run all four checks above and report the counts.
 - Templates are Markdown and meant to be copied. Keep them plain, with no tool-specific syntax.
