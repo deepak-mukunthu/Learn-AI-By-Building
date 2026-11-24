@@ -24,6 +24,7 @@ The Sandbox's "model" is a simulator that follows fixed rules, so everyone gets 
 | [`templates/builders/`](templates/builders/) | The Northwind practice documents, ten help-desk test questions, and a day-by-day 30-day checklist | Appendix A7, Appendix G |
 | [`docs/chapter-guide.md`](docs/chapter-guide.md) | What to do in each chapter, where, and what you should see | All chapters |
 | [`docs/projects.md`](docs/projects.md) | Every open-source project the book uses, with setup and common problems | Chapter 12, Appendix B |
+| [`docs/assistant-prompts.md`](docs/assistant-prompts.md) | Prompts for working through the book with a coding agent or AI assistant | All chapters |
 
 ## Which path is yours?
 

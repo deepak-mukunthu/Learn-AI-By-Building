@@ -10,6 +10,7 @@ The book's numbers come from deterministic simulators, so a reader on the tag bo
 - [AGENTS.md](https://raw.githubusercontent.com/deepak-mukunthu/Learn-AI-By-Building/main/AGENTS.md): how to run things and how to help a reader
 - [Chapter guide](https://raw.githubusercontent.com/deepak-mukunthu/Learn-AI-By-Building/main/docs/chapter-guide.md): what to do in each chapter and what you should see
 - [Projects](https://raw.githubusercontent.com/deepak-mukunthu/Learn-AI-By-Building/main/docs/projects.md): every open-source project the book uses, with setup and common problems
+- [Assistant prompts](https://raw.githubusercontent.com/deepak-mukunthu/Learn-AI-By-Building/main/docs/assistant-prompts.md): ready-made prompts a reader can give an AI assistant, by reader path
 
 ## Code
 
@@ -43,5 +44,5 @@ The book's numbers come from deterministic simulators, so a reader on the tag bo
 
 ## Optional
 
-- [AI Builder Lab](https://github.com/deepak-mukunthu/AI-Builder-Lab): ShopBot and the Sandbox, the browser exercises for Chapters 2 to 10. Its AGENTS.md lists the expected scores.
+- [AI Builder Lab](https://github.com/deepak-mukunthu/AI-Builder-Lab): ShopBot and the Sandbox, the browser exercises for Chapters 2 to 10. Its AGENTS.md lists the expected scores, and `node tools/report.js` prints them for any number of fixes.
 - [test_real_model.py](https://raw.githubusercontent.com/deepak-mukunthu/Learn-AI-By-Building/main/code/tiny-agent/test_real_model.py): offline test for the real-model version

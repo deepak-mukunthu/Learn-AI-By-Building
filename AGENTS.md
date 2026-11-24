@@ -26,6 +26,7 @@ templates/builders/         Northwind documents, help-desk test questions,
                             30-day checklist (Appendix A7, G)
 docs/chapter-guide.md       what to do in each chapter and what to expect
 docs/projects.md            every project the book uses, with setup
+docs/assistant-prompts.md   prompts readers paste into their assistant
 llms.txt                    index of this repository for language models
 ```
 
@@ -45,10 +46,11 @@ The book was written against the tag `book-edition-1`. Check it out if results d
 
 ## Related repositories
 
-The interactive exercises live in [AI-Builder-Lab](https://github.com/deepak-mukunthu/AI-Builder-Lab), which has its own `AGENTS.md` with the expected numbers. The other projects are listed in `docs/projects.md`.
+The interactive exercises live in [AI-Builder-Lab](https://github.com/deepak-mukunthu/AI-Builder-Lab), which has its own `AGENTS.md` with the expected numbers. `node tools/report.js --fixes N` there prints ShopBot's numbers after N fixes. The other projects are listed in `docs/projects.md`.
 
 ## Helping a reader
 
+- If the reader pastes a prompt from `docs/assistant-prompts.md`, follow it.
 - Find the reader's path first. A product manager wants the templates and the questions to ask. A developer wants the tiny agent. A builder wants the Sandbox and the Northwind pack.
 - `docs/chapter-guide.md` gives the expected result for every chapter. Use it to check a reader's work.
 - The exercises are meant to be solved. Point to the trace, the part, or the template row before giving the answer. Give the answer if they ask for it outright.
