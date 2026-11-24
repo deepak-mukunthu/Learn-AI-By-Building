@@ -2,7 +2,7 @@
 
 - [ ] **Days 1 to 2.** Choose the problem. Measure how it's handled today (volume, minutes per request, errors). *Done when:* you have three baseline numbers.
 - [ ] **Days 3 to 4.** Fill in the job card and write ten test questions with expected answers. Show both to one person who will use the assistant. *Done when:* they say "yes, that's the job, and those are the right questions."
-- [ ] **Days 5 to 7.** Check your platform against the list in Appendix G. Run the upload check, then gather and clean five documents. *Done when:* each has a title and a date, and none fails the check.
+- [ ] **Days 5 to 7.** Check your platform against the list in Appendix G. Run the upload check, then gather and clean four or five documents. *Done when:* each has a title and a date, and none fails the check.
 - [ ] **Days 8 to 10.** Write the instructions, build the first version, and run all ten tests. *Done when:* you have a first score.
 - [ ] **Days 11 to 18.** Fix one failure a day, rerunning all ten each time. *Done when:* the four "must never" tests pass on every run, and the rest are steady.
 - [ ] **Days 19 to 21.** Add five more tests from what you learned, mostly "not covered" and trick cases. Then check the gate before anyone else sees the assistant. *Gate:* zero unresolved critical failures across all 15 tests, run three times each. A good total doesn't count if any "must never" case failed. If one did, fix it and run the gate again before the pilot.

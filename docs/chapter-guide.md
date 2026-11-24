@@ -9,8 +9,8 @@ Match the book's version. After cloning any project, run `git checkout book-edit
 | Ch | Title | Do | Where | You should see |
 | --- | --- | --- | --- | --- |
 | 1 | What a Model Actually Does | Three ten-minute experiments: test statelessness, missing facts, and randomness | Any AI chat app | A new chat doesn't know your favorite color. An invented price for a store the model can't know. Varied coffee shop names, but 391 for 17 × 23. |
-| 2 | From Chatbot to Agent | Run ShopBot on your laptop | Lab, or Sandbox with ShopBot mini | Quality 76 out of 100, from 15 conversations. Task success is only 27%. |
-| 3 | Your First Debugging Session | Play the guessing game: open five failed conversations in Traces & Tagging and guess which part failed | Lab, or Sandbox ShopBot mini with Load broken version | Five failures, and none of them is the model. S03, S04, and S12 are context failures. S11 and S10 are harness failures. S09 is a memory failure only. |
+| 2 | The Five Parts of an Agent | Run ShopBot on your laptop | Lab, or Sandbox with ShopBot mini | Quality 76 out of 100, from 15 conversations. Task success is only 27%. |
+| 3 | Your First Debugging Session | Play the guessing game: open five failed conversations in Traces & Tagging and guess which part failed | Lab, or Sandbox ShopBot mini with Load broken version | Five failures, and none of them is the model. S03, S04, and S12 are context failures. S11 is a harness failure and a memory one. S10 has the same two causes plus context. S09 is mainly a memory failure, and Reveal also shows a context card for it. |
 
 ## Part II. Build the parts around the model
 
@@ -18,7 +18,7 @@ Match the book's version. After cloning any project, run `git checkout book-edit
 | --- | --- | --- | --- | --- |
 | 4 | Context: What the Model Sees | Apply the "Catalog truncated in context window" fix (`catalogTopK` 3 to 8) | Lab, or Sandbox Help desk, tab 2 Knowledge | v2 at quality 80, up from 76. S03 now says the Echo Studio Mic is out of stock. Task success rises from 27% to 60%. |
 | 5 | Memory: What the Agent Keeps | Turn on customer profile memory, then lower the temperature | Lab, or Sandbox ShopBot mini, tab 3 Memory | v3: "No re-ask" goes from 67% to 100%, quality 82. v4: quality stays at 82, and p95 latency drops from 588 to 451 milliseconds. |
-| 6 | Tools: Where the Facts Come From | Switch the pricing source from stale to live | Lab, or Sandbox ShopBot mini, tab 4 Tools & Rules | The tool step reads "$69" with a source of "live". v5 shows quality 91, up from 82, and grounding back at 100%. |
+| 6 | Tools: How the Agent Reads and Acts | Switch the pricing source from stale to live | Lab, or Sandbox ShopBot mini, tab 4 Tools & Rules | The tool step reads "$69" with a source of "live". v5 shows quality 91, up from 82, and grounding back at 100%. |
 | 7 | Guardrails: Rules That Hold | Enable the refund guardrail | Lab (scenario S11), or Sandbox ShopBot mini, tab 4 | The $400 refund goes to a person for approval. Policy safety goes from 87% to 100%, and quality reads 98. |
 
 ## Part III. Test it, improve it, afford it

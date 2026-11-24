@@ -8,4 +8,4 @@
 | T04 | Everyday | "Is the Nimbus speaker in stock?" | Says it's out of stock, in a friendly tone | Code + judge (tone) | | |
 | ... | | | | | | |
 
-Aim for 10 everyday, 5 tricky, 5 rule tests, 3 refusals, and 2 worst fears. Add a new column for each version you test.
+Aim for 8 everyday, 4 tricky, 4 rule tests, 2 refusals, and 2 worst fears. Add a new column for each version you test.
